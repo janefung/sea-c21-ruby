@@ -1,0 +1,64 @@
+=> Homebrew
+Homebrew 0.9.5
+Your system is ready to brew.
+
+=> Shell
+/usr/local/bin/fish
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+=> Sublime Text
+Sublime Text 2 Build 2221
+{
+  "ensure_newline_at_eof_on_save": true,
+  "rulers": [80],
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "font_size": 18.0
+}
+
+=> Ruby
+ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin13.0]
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:AUTO_INDENT] = true
+
+=> Git
+git version 2.1.2
+alias.br=branch
+alias.c=commit -m
+alias.ca=commit --amend --reuse-message=HEAD
+alias.ci=commit --verbose
+alias.co=checkout
+alias.df=diff HEAD
+alias.dfs=diff --staged
+alias.la=log --patch --stat --pretty=format:"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s"
+alias.ll=log --pretty=format:"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s"
+alias.rmb=!sh -c "git branch -D $1 && git push origin :$1" -
+alias.st=status --short --branch
+branch.master.merge=refs/heads/master
+branch.master.remote=origin
+color.branch.current=yellow reverse
+color.branch.local=yellow
+color.branch.remote=green
+color.branch.upstream=cyan
+color.diff.frag=magenta bold
+color.diff.func=normal bold
+color.diff.meta=yellow bold
+color.diff.new=green bold
+color.diff.old=red bold
+color.status.added=green bold
+color.status.branch=yellow
+color.status.changed=yellow bold
+color.status.untracked=cyan bold
+core.bare=false
+core.filemode=true
+core.ignorecase=true
+core.logallrefupdates=true
+core.precomposeunicode=true
+core.repositoryformatversion=0
+credential.helper=osxkeychain
+push.default=simple
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+remote.origin.url=https://github.com/janefung/sea-c21-ruby.git
+user.email=janefungpublic@gmail.com
+user.name=Jane Fung
