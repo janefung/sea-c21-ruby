@@ -65,34 +65,22 @@ Anything typed appears after the green `✔` prompt symbol. :+1:
 **TIP:** The full name of your working directory is `~/Projects/sea-c21-ruby`. To save prompt space, Fish abbreviates it. This is especially handy for **deeply nested** directories.
 
 
-### Test your setup
+### Test your laptop
 
-Now that the shell's working directory is set to the project's directory, you can test how well you've setup your computer. :8ball:
+Now that the working directory is set to the project's directory, you can test how well you've setup your laptop. :8ball:
 
-To get started, run the following command and give it a few seconds to complete:
-
-```
-lib/class1/test_ubuntu.sh > lib/class1/ubuntu.txt
-```
-
-Feel free to take a look at both the test:
+To get started, run the following command:
 
 ```
-cat lib/class1/test_ubuntu.sh
-```
-
-And the results:
-
-```
-cat lib/class1/ubuntu.txt
+bin/test_laptop
 ```
 
 Now, you may have noticed a red `✖` has replaced your prompt symbol. It indicates your staging area is dirty. :worried:
 
-To fix that, add `lib/class1/ubuntu.txt` to your repository's staging area:
+To fix that, add `lib/class1/laptop.txt` to your repository's staging area:
 
 ```
-git add lib/class1/ubuntu.txt
+git add lib/class1/laptop.txt
 ```
 
 And commit the changes to your repository:
@@ -127,7 +115,13 @@ First, you'll need to download and install [Bundler](http://bundler.io/), a tool
 sudo gem install bundler
 ```
 
-And second, you'll want to add an `upstream` remote to you locally cloned project:
+Second, install the 3rd-party Ruby code with Bundler:
+
+```
+bundle install --path vendor/bundle
+```
+
+And third, you'll want to add an `upstream` remote to you locally cloned project:
 
 ```
 git remote add upstream https://github.com/codefellows/sea-c21-ruby.git
