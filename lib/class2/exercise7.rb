@@ -32,5 +32,5 @@
 
 puts 'Table of Contents'.center(50)
 puts 'Chapter 1:  Getting Started'.ljust(27) + 'page  1'.rjust(23)
-puts 'Chapter 2:  Numbers'.ljust(25) + 'page  9'.rjust(25)
-puts 'Chapter 3:  Letters'.ljust(25) + 'page 13'.rjust(25)
+puts 'Chapter 2:  Numbers'.ljust(25)         + 'page  9'.rjust(25)
+puts 'Chapter 3:  Letters'.ljust(25)         + 'page 13'.rjust(25)
