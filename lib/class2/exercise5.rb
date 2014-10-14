@@ -1,4 +1,4 @@
-# 5 points
+  # 5 points
 #
 # Write a program that asks for a person's favorite number. Have your program
 # add 1 to the number and then suggest the result as a better favorite number.
@@ -11,7 +11,6 @@
 #   That's ok, I guess, but isn't 43 just a bit better?
 
 puts "What's your favorite number?"
-favorite_number = gets.chomp
-fav_num_plus_1 = favorite_number.to_i + 1
+favorite_number = gets.chomp.to_i + 1
 
 puts "That's ok, I guess, but isn't #{fav_num_plus_1} just a bit better?"
