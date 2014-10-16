@@ -32,3 +32,29 @@
 #   Nana: HOW'S SCHOOL GOING?
 #   BYE
 #   Nana: BYE SWEETIE!
+
+puts 'Nana: HI SWEETIE! GIVE NANA A KISS!'
+
+buy_count = 0
+
+loop do
+  reply = gets.chomp
+
+  if reply == 'BYE'
+    bye_count += 1
+  else
+    bye_count = 0
+  end
+
+  break if bye_count >= 3
+
+  response = if reply != reply.upcase
+    'Nana: HUH?! SPEAK UP, SWEETIE!'
+  else
+    "Nana: NOT SINCE #{rand(1930..1950)}!"
+  end
+
+  puts response
+end
+
+puts 'Nana: BYE SWEETIE!'
