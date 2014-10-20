@@ -72,7 +72,7 @@ loop do
 
     if reply == reply.upcase
       puts "Nana: NOT SINCE #{1930 + rand(21)}!"
-   else
+    else
       puts 'Nana: HUH?! SPEAK UP, SWEETIE!'
     end
   end
