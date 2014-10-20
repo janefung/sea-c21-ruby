@@ -1,30 +1,24 @@
 ## Looping Guidelines
 
 
-#### Favor modifier usage of `while/until` when you have a single-line body
-
-```ruby
-# bad
-while some_condition
-  do_something
-end
-
-# good
-do_something while some_condition
-```
-
-
 #### Favor `until` over `while` for negative conditions
 
 ```ruby
 # bad
-do_something while !some_condition
+year = 1974
 
-# bad
-do_something while not some_condition
+while year != 2014
+  puts 'Maybe next year'
+  year += 1
+end
 
 # good
-do_something until some_condition
+year = 1974
+
+until year == 2014
+  puts 'Maybe next year'
+  year += 1
+end
 ```
 
 
@@ -32,16 +26,20 @@ do_something until some_condition
 
 ```ruby
 # bad
+count = 0
+
 while
-  some_condition
-  do_something
-  do_something_else
+  count < 10
+  puts 'Go Hawks!'
+  count += 1
 end
 
 # good
-while some_condition
-  do_something
-  do_something_else
+count = 0
+
+while count < 10
+  puts 'Go Hawks!'
+  count += 1
 end
 ```
 
@@ -50,13 +48,19 @@ end
 
 ```ruby
 # bad
-while (chapter < 15)
-  # body omitted
+count = 0
+
+while (count < 10)
+  puts 'Go Hawks!'
+  count += 1
 end
 
 # good
-while chapter < 15
-  # body omitted
+count = 0
+
+while count < 10
+  puts 'Go Hawks!'
+  count += 1
 end
 ```
 
@@ -66,37 +70,30 @@ end
 ```ruby
 # bad
 while true
-  do_something
-end
-
-# bad
-until false
-  do_something
+  puts 'Go Hawks!'
 end
 
 # good
 loop do
-  do_something
+  puts 'Go Hawks!'
 end
 ```
 
 
-#### For post-loop tests, use `loop` with `break` rather than `begin/end while/until`
+#### For post-loop tests, use `loop` with `break`
 
 ```ruby
 # bad
-begin
+while true
+  puts "Who's your favorite team?"
   input = gets.chomp
-end while input != "stop"
-
-# bad
-begin
-  input = gets.chomp
-end until input == "stop"
+  break if input.downcase == 'seahawks'
+end
 
 # good
 loop do
+  puts "Who's your favorite team?"
   input = gets.chomp
-  break if input == "stop"
+  break if input.downcase == 'seahawks'
 end
 ```
