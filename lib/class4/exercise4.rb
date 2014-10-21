@@ -29,27 +29,27 @@
 # rubocop:disable MethodLength
 def old_school_roman_numeral(num)
   arabs_to_romans = [
-    [1000, 'M'],
-    [ 500, 'D'],
-    [ 100, 'C'],
-    [  50, 'L'],
-    [  10, 'X'],
-    [   5, 'V'],
-    [   1, 'I']
+    ['M', 1000],
+    ['D', 500],
+    ['C', 100],
+    ['L', 50],
+    ['X', 10],
+    ['V', 5],
+    ['I', 1]
   ]
 
-result = ''
+  result = ''
 
   arabs_to_romans.each do |arab_to_roman|
-      arab = arab_to_roman[0]
-      roman = arab_to_roman[1]
+    arab = arab_to_roman[1]
+    roman = arab_to_roman[0]
 
-      if num / arab !=0
-        result += roman * (num / arab)
-        num = num % arab
-      end
+    if num / arab != 0
+      result += roman * (num / arab)
+      num = num % arab
+    end
   end
-  return result
+  result
 end
 
 input = ARGV[0].to_i

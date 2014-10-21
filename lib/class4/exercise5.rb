@@ -33,7 +33,34 @@
 
 # rubocop:disable MethodLength
 def modern_roman_numeral(num)
-  num # change me
+  arabs_to_romans = [
+    ['M', 1000],
+    ['CM', 900],
+    ['D', 500],
+    ['CD', 400],
+    ['C', 100],
+    ['XC', 90],
+    ['L', 50],
+    ['XL', 40],
+    ['X', 10],
+    ['IX', 9],
+    ['V', 5],
+    ['IV', 4],
+    ['I', 1]
+  ]
+
+  result = ''
+
+  arabs_to_romans.each do |arab_to_roman|
+    arab = arab_to_roman[1]
+    roman = arab_to_roman[0]
+
+    if num / arab != 0
+      result += roman * (num / arab)
+      num = num % arab
+    end
+  end
+  result
 end
 
 input = ARGV[0].to_i
