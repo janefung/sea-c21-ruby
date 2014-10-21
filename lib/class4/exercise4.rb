@@ -45,13 +45,9 @@ def old_school_roman_numeral(num)
 
       if num / arab !=0
         result += roman
-       num = num % arab
-       puts num
-#        result.push roman
+        num = num % arab
       end
-      return result
   end
-
 end
 
 input = ARGV[0].to_i
