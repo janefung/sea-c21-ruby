@@ -1,6 +1,73 @@
 ## Array Guidelines
 
-#### No spaces before `[`
+
+#### When defining an Array, no spaces after `[` or before `]`
+
+```ruby
+# bad
+friends = [ 'Julia', 'Chris', 'Anne Marie' ]
+
+# good
+friends = ['Julia', 'Chris', 'Anne Marie']
+```
+
+
+#### When defining an Array, one space after `,`
+
+```ruby
+# bad
+friends = ['Julia','Chris','Anne Marie']
+
+# good
+friends = ['Julia', 'Chris', 'Anne Marie']
+```
+
+
+#### Always define an Array on same line as the assignment
+
+```ruby
+# bad
+friends =
+  ['Julia', 'Chris', 'Anne Marie']
+
+# good
+friends = ['Julia', 'Chris', 'Anne Marie']
+```
+
+
+#### Use multi-line definition when elements can't fit on one line
+
+```ruby
+# bad
+friends = ['Julia', 'Chris', 'Anne Marie', 'Sierra', 'Ivan',
+  'Sarah', 'Mary', 'Paul']
+
+# good
+friends = [
+  'Julia',
+  'Chris',
+  'Anne Marie',
+  'Sierra',
+  'Ivan',
+  'Sarah',
+  'Mary',
+  'Paul'
+]
+```
+
+
+#### Use `%w()` when defining an Array of single-word Strings
+
+```ruby
+# bad
+friends = ['Julia', 'Chris', 'Sierra']
+
+# good
+friends = %w(Julia Chris Sierra)
+```
+
+
+#### When accessing an Array, no spaces before `[`
 
 ```ruby
 # bad
@@ -13,7 +80,7 @@ friends[0]
 ```
 
 
-#### No spaces after `[` or before `]`
+#### When accessing an Array, no spaces after `[` or before `]`
 
 ```ruby
 # bad
@@ -53,62 +120,20 @@ end
 **TIP:** Name the parameter `e` for single-line iterator blocks
 
 
-#### Prefer `each` over `for` because of their block scope
-
-```ruby
-# bad
-for item in [1, 2, 3] do
-  puts item
-end
-
-# item is accessible outside the for loop
-item # => 3
-
-# good
-[1, 2, 3].each { |item| puts item }
-
-# item is not accessible outside the each block
-item # => NameError: undefined local variable or method `item'
-```
-
-
-#### Prefer `each` over `for` because of their container's scope
-
-```ruby
-# bad
-item = 99
-
-for item in [1, 2, 3] do
-  puts item
-end
-
-# item is accessible outside the for loop
-item # => 3
-
-# good
-item = 99
-
-[1, 2, 3].each { |item| puts item }
-
-# item is not accessible outside the each block
-item # => 99
-```
-
-
 #### Use `next` to prematurely skip to the next iteration
 
 ```ruby
 # bad
-[1, 2, 3].each do |item|
-  if item >= 2
-    puts item
+[1, 2, 3].each do |element|
+  if element >= 2
+    puts element
   end
 end
 
 # good
-[1, 2, 3].each do |item|
-  next if item < 2
-  puts item
+[1, 2, 3].each do |element|
+  next if element < 2
+  puts element
 end
 ```
 
@@ -117,15 +142,15 @@ end
 
 ```ruby
 # bad
-[1, 2, 3].each do |item|
-  if item < 2
-    puts item
+[1, 2, 3].each do |element|
+  if element < 2
+    puts element
   end
 end
 
 # good
-[1, 2, 3].each do |item|
-  break if item >= 2
-  puts item
+[1, 2, 3].each do |element|
+  break if element >= 2
+  puts element
 end
 ```
