@@ -38,8 +38,10 @@ def old_school_roman_numeral(num)
     [   1, 'I']
   ]
 
+result = ''
+
   arabs_to_romans.each do |arab_to_roman|
-      result = ''
+
       arab = arab_to_roman[0]
       roman = arab_to_roman[1]
 
@@ -48,6 +50,7 @@ def old_school_roman_numeral(num)
         num = num % arab
       end
   end
+  return result
 end
 
 input = ARGV[0].to_i
