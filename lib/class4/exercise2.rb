@@ -30,3 +30,11 @@ hits = [
 hits.each do |hit|
   puts hit[0].ljust(20) + hit[1].ljust(20) + hit[2].rjust(10)
 end
+
+# Ryan's solution...
+
+# hits.each do |hit|
+#   song, artist, year = hit #destructuring asignment
+#
+#   puts song.ljust(20) + artist.ljust(26) + year.ljust(4)
+# end
