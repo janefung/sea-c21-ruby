@@ -41,12 +41,11 @@ def old_school_roman_numeral(num)
 result = ''
 
   arabs_to_romans.each do |arab_to_roman|
-
       arab = arab_to_roman[0]
       roman = arab_to_roman[1]
 
       if num / arab !=0
-        result += roman
+        result += roman * (num / arab)
         num = num % arab
       end
   end
