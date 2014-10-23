@@ -27,15 +27,20 @@
 require 'yaml'
 
 def person
-  { replace: 'me' }
+  {
+    name: 'George Harrison',
+    age: 58,
+    song: 'Something',
+    url: 'https://www.youtube.com/watch?v=UKAp-jRUp2o'
+  }
 end
 
 def database
-  '/replace/me'
+  File.absolute_path('../database.yml', __FILE__)
 end
 
 def save
-  false # fix me
+  File.write(database, person.to_yaml)
 end
 
 save
