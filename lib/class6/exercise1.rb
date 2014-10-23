@@ -18,7 +18,12 @@
 require 'yaml'
 
 def person
-  { change: 'me' }
+  {
+    name: 'George Harrison',
+    age: 58,
+    song: 'Something',
+    url: 'https://www.youtube.com/watch?v=UKAp-jRUp2o'
+  }
 end
 
 puts person.to_yaml
