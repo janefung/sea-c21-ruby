@@ -71,6 +71,7 @@
 
 def database
   File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  # File.absolute_path('../database.yml',__FILE__)
 end
 
 puts database

@@ -44,6 +44,7 @@ end
 def save
   File.open database, 'w' do |f|
     f.write records.to_yaml
+    # File.write(database, records.to_yaml)
   end
 end
 

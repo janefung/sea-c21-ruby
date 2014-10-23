@@ -23,11 +23,13 @@ require 'yaml'
 
 def database
   File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
+  # File.write(database, records.to_yaml)
 end
 
 def load
   read_string = File.read database
   YAML.load read_string
+  # YAML.load_file(database)
 end
 
 records = load
