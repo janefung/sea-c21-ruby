@@ -30,7 +30,7 @@ def load
 end
 
 def find(key)
-  key # fix me
+  load[key.to_sym]
 end
 
 input = ARGV[0]

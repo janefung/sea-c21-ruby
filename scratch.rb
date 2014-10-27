@@ -1,3 +1,2 @@
-person = { 'name' => 'john' }
-person.merge('age' => 40)
-puts person
+person = { 'name' => 'john', 'age' => 40 }
+puts person['name']  #=> 'john'
