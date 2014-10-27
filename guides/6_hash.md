@@ -1,13 +1,14 @@
 ## Hash Guidelines
 
+
 #### One space after `{` and before `}`
 
 ```ruby
 # bad
-{"one" => 1, "two" => 2}
+{'dogs' => 1, 'cats' => 2}
 
 # good
-{ "one" => 1, "two" => 2 }
+{ 'dogs' => 1, 'cats' => 2 }
 ```
 
 
@@ -15,23 +16,22 @@
 
 ```ruby
 # bad
-{ "one"=>1, "two"=>2 }
+{ 'dogs'=>1, 'cats'=>2 }
 
 # good
-{ "one" => 1, "two" => 2 }
+{ 'dogs' => 1, 'cats' => 2 }
 ```
 
 
-#### Avoid using a comma after the last item of a literal
+#### No comma after the last key-value pair
 
 ```ruby
 # bad
-{ "one" => 1, "two" => 2, }
+{ 'dogs' => 1, 'cats' => 2, }
 
 # good
-{ "one" => 1, "two" => 2 }
+{ 'dogs' => 1, 'cats' => 2 }
 ```
-
 
 
 #### Align `=>` for multi-line Hash literals
@@ -39,16 +39,16 @@
 ```ruby
 # bad
 {
-  "one" => 1,
-  "two" => 2,
-  "three" => 3
+  'dogs' => 1,
+  'cats' => 2,
+  'bunnies' => 3
 }
 
 # good
 {
-  "one"   => 1,
-  "two"   => 2,
-  "three" => 3
+  'dogs'    => 1,
+  'cats'    => 2,
+  'bunnies' => 3
 }
 ```
 
@@ -57,10 +57,12 @@
 
 ```ruby
 # bad
-some_hash ["key"]
+pets = { 'dogs' => 1, 'cats' => 2 }
+pets ['dogs']
 
 # good
-some_hash["key"]
+pets = { 'dogs' => 1, 'cats' => 2 }
+pets['dogs']
 ```
 
 
@@ -68,22 +70,26 @@ some_hash["key"]
 
 ```ruby
 # bad
-some_hash[ "key" ]
+pets = { 'dogs' => 1, 'cats' => 2 }
+pets[ 'dogs' ]
 
 # good
-some_hash["key"]
+pets = { 'dogs' => 1, 'cats' => 2 }
+pets['dogs']
 ```
 
 
 #### Prefer `size` over `length` and `count`
 
 ```ruby
+pets = { 'dogs' => 1, 'cats' => 2 }
+
 # bad
-some_hash.length
-some_hash.count
+pets.length
+pets.count
 
 # good
-some_hash.size
+pets.size
 ```
 
 
@@ -91,12 +97,12 @@ some_hash.size
 
 ```ruby
 # bad
-{ "one" => 1, "two" => 2 }.each do |key, value|
+{ 'dogs' => 1, 'cats' => 2 }.each do |key, value|
   puts key + value
 end
 
 # good
-{ "one" => 1, "two" => 2 }.each { |k, v| puts k + v }
+{ 'dogs' => 1, 'cats' => 2 }.each { |k, v| puts k + v }
 ```
 
 **TIP:** Name the parameters `k` and `v` for single-line iterator blocks
@@ -106,24 +112,25 @@ end
 
 ```ruby
 # bad
-some_hash.each { |k, v| puts v }
+{ 'dogs' => 1, 'cats' => 2 }.each { |k, v| puts v }
 
 # good
-some_hash.each { |_, v| puts v }
+{ 'dogs' => 1, 'cats' => 2 }.each { |_, v| puts v }
 ```
+
 
 #### Use `next` to prematurely skip to the next iteration
 
 ```ruby
 # bad
-{ "one" => 1, "two" => 2, "three" => 3 }.each do |key, value|
+{ 'dogs' => 1, 'cats' => 2, 'bunnies' => 3 }.each do |key, value|
   if value >= 2
     puts key
   end
 end
 
 # good
-{ "one" => 1, "two" => 2, "three" => 3 }.each do |key, value|
+{ 'dogs' => 1, 'cats' => 2, 'bunnies' => 3 }.each do |key, value|
   next if value < 2
   puts key
 end
@@ -134,14 +141,14 @@ end
 
 ```ruby
 # bad
-{ "one" => 1, "two" => 2, "three" => 3 }.each do |key, value|
+{ 'dogs' => 1, 'cats' => 2, 'bunnies' => 3 }.each do |key, value|
   if value < 2
     puts key
   end
 end
 
 # good
-{ "one" => 1, "two" => 2, "three" => 3 }.each do |key, value|
+{ 'dogs' => 1, 'cats' => 2, 'bunnies' => 3 }.each do |key, value|
   break if value >= 2
   puts key
 end
@@ -152,22 +159,8 @@ end
 
 ```ruby
 # bad
-{ "two" => 2, "one" => 1 }.each { |k, v| puts "#{k} is #{v}" }
+{ 'February' => 28, 'Janurary' => 31 }.each { |k, v| puts "#{k} is #{v}" }
 
 # good
-{ "one" => 1, "two" => 2 }.each { |k, v| puts "#{k} is #{v}" }
-```
-
-
-#### Never modify while iterating
-
-```ruby
-some_hash = { "one" => 1, "two" => 2 }
-
-# bad
-some_hash.each { |key, value| some_hash[key] = value + 1 }
-
-# good
-temp = {}
-some_hash.each { |key, value| temp[key] = value + 1 }
+{ 'Janurary' => 31, 'February' => 28 }.each { |k, v| puts "#{k} is #{v}" }
 ```
