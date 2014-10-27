@@ -31,7 +31,10 @@ def load
 end
 
 def remove(key)
-  key # fix me
+  person = load
+  value = person.delete(key.to_sym)
+  File.write(database, person.to_yaml)
+  value
 end
 
 input = ARGV[0]
