@@ -40,6 +40,7 @@ def load
 end
 
 def display(pairs)
+  # pairs.each { |k,v| puts "#{k.inspect} => #{v.inspect}" }
   pairs.each do |key, value|
     puts "#{key.inspect} => #{value.inspect}"
   end
