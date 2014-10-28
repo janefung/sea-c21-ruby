@@ -36,7 +36,7 @@ RSpec.describe String do
   end
 
   it 'indents foo by 1 space' do
-    expect('foo'.indent(1)).to eq('  foo')
+    expect('foo'.indent(1)).to eq(' foo')
   end
 
   it 'indents foo by 0 spaces' do
@@ -90,15 +90,15 @@ RSpec.describe Integer do
   end
 
   it 'transforms 20 into a roman numeral' do
-    expect(10.to_roman).to eq('XX')
+    expect(20.to_roman).to eq('XX')
   end
 
   it 'transforms 30 into a roman numeral' do
-    expect(10.to_roman).to eq('XXX')
+    expect(30.to_roman).to eq('XXX')
   end
 
   it 'transforms 40 into a roman numeral' do
-    expect(10.to_roman).to eq('XL')
+    expect(40.to_roman).to eq('XL')
   end
 
   it 'transforms 50 into a roman numeral' do
@@ -146,15 +146,15 @@ RSpec.describe Integer do
   end
 
   it 'transforms 700 into a roman numeral' do
-    expect(700.to_roman).to eq('DC')
+    expect(700.to_roman).to eq('DCC')
   end
 
   it 'transforms 800 into a roman numeral' do
-    expect(800.to_roman).to eq('DCC')
+    expect(800.to_roman).to eq('DCCC')
   end
 
   it 'transforms 900 into a roman numeral' do
-    expect(900.to_roman).to eq('MC')
+    expect(900.to_roman).to eq('CM')
   end
 
   it 'transforms 1000 into a roman numeral' do
@@ -171,41 +171,41 @@ RSpec.describe Integer do
 end
 
 RSpec.describe Array do
-  it 'gets the 2nd element of 3' do
+  it 'gets the 2nd element of an Array with 3 elements' do
     expect([10, 20, 30].second).to eq(20)
   end
 
-  it 'gets the 2nd element of 2' do
+  it 'gets the 2nd element of an Array with 2 elements' do
     expect([10, 20].second).to eq(20)
   end
 
-  it 'gets the 2nd element of 1' do
+  it 'gets the 2nd element of an Array with 1 elements' do
     expect([10].second).to be_nil
   end
 
-  it 'gets the 2nd element of 0' do
+  it 'gets the 2nd element of an Array with 0 elements' do
     expect([].second).to be_nil
   end
 end
 
 RSpec.describe Array do
-  it 'gets the 3rd element of 4' do
+  it 'gets the 3rd element of an Array with 4 elements' do
     expect([10, 20, 30, 40].third).to eq(30)
   end
 
-  it 'gets the 3rd element of 3' do
+  it 'gets the 3rd element of an Array with 3 elements' do
     expect([10, 20, 30].third).to eq(30)
   end
 
-  it 'gets the 3rd element of 2' do
+  it 'gets the 3rd element of an Array with 2 elements' do
     expect([10, 20].third).to be_nil
   end
 
-  it 'gets the 3rd element of 1' do
+  it 'gets the 3rd element of an Array with 1 elements' do
     expect([10].third).to be_nil
   end
 
-  it 'gets the 3rd element of 0' do
+  it 'gets the 3rd element of an Array with 0 elements' do
     expect([].third).to be_nil
   end
 end
