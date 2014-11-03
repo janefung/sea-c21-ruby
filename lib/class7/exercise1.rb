@@ -46,29 +46,59 @@
 #     1.plus_forty_two  #=> 43
 
 class Integer
-  def hours_in_seconds
-    # replace me
+  def hours_in_seconds #instance method
+    self * 60 * 60
   end
 end
 
 class String
   def indent(amount = 2)
-    amount # replace me
+    ' ' * amount + self
   end
 end
 
 class Integer
+  rubocop:disable MethodLength
   def to_roman
-    # replace me
+    arabs_to_romans = [
+      ['M', 1000],
+      ['CM', 900],
+      ['D', 500],
+      ['CD', 400],
+      ['C', 100],
+      ['XC', 90],
+      ['L', 50],
+      ['XL', 40],
+      ['X', 10],
+      ['IX', 9],
+      ['V', 5],
+      ['IV', 4],
+      ['I', 1]
+    ]
+
+    num = self
+    result = []
+
+    arabs_to_romans.each do |arab_to_roman|
+      arab, roman = arab_to_roman
+
+      quotient = num / arabic
+      next if quotient == 0
+
+      answer.push(roman * quotient)
+      num %= arabic
+
+    end
+    result
   end
 end
 
 class Array
   def second
-    # replace me
+    self[1]
   end
 
   def third
-    # replace me
+    self[2]
   end
 end
