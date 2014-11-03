@@ -46,7 +46,7 @@
 #     1.plus_forty_two  #=> 43
 
 class Integer
-  def hours_in_seconds #instance method
+  def hours_in_seconds # instance method
     self * 60 * 60
   end
 end

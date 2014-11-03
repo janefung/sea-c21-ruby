@@ -21,7 +21,9 @@ class OrangeTree
     @fruit = 50
   end
 
-  def fruit
-    @fruit
-  end
+  attr_reader :fruit
+  # replaces...
+  # def fruit
+  #   @fruit
+  # end
 end
