@@ -58,7 +58,7 @@ class String
 end
 
 class Integer
-  rubocop:disable MethodLength
+  # rubocop:disable MethodLength
   def to_roman
     arabs_to_romans = [
       ['M', 1000],
