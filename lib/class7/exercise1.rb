@@ -80,16 +80,17 @@ class Integer
     result = []
 
     arabs_to_romans.each do |arab_to_roman|
-      arab, roman = arab_to_roman
+      roman, arab = arab_to_roman
 
-      quotient = num / arabic
+      quotient = num / arab
       next if quotient == 0
 
-      answer.push(roman * quotient)
-      num %= arabic
+      result.push(roman * quotient)
+      num %= arab
 
     end
-    result
+
+    result.join
   end
 end
 
