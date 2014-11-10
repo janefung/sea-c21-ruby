@@ -15,9 +15,10 @@
 # TIP: Don't over think this one. The simpler the better.
 
 def follow_the_execution(&block)
-  block # fix me
+  puts 'Executing the method'
+  block.call
 end
 
 follow_the_execution do
-  # fix me
+  puts 'Executing the block'
 end

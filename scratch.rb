@@ -1,111 +1,29 @@
-class Dragon
-  def initialize name
-    @name = name
-    @asleep = false
-    @stuff_in_belly = 10 # He's full
-    @stuff_in_intestine = 0 # He doesn't need to go
+class Array
 
-    puts "#{@name} is born"
-  end
+  def each_even(&was_a_block__now_a_proc)
+    # we start with "true" because arrays start with 0, which is even.
+    is_even = true
 
-  def feed
-    puts "You feed #{@name}."
-    @stuff_in_belly = 10
-    passage_of_time
-  end
-
-  def walk
-    puts "You walk #{@name}."
-    @stuff_in_intestine = 0
-    passage_of_time
-  end
-
-  def put_to_bed
-    puts "You put #{@name} to bed."
-    @asleep = true
-    3.times do
-      if @asleep
-        passage_of_time
+    self.each do |object|
+      if is_even
+        was_a_block__now_a_proc.call object
       end
-      if @asleep
-        puts "#{@name} snores, filling the room with smoke."
-      end
-    end
-    if @asleep
-      @asleep = false
-      puts "#{@name} wakes up slowly."
-    end
-  end
 
-  def toss
-    puts "You toss #{@name} up into the air."
-    puts 'He giggles, which singes your eyebrows.'
-    passage_of_time
-  end
-
-  def rock
-    puts "you rock #{@name} gently."
-    @asleep = true
-    puts 'He briefly dozes off...'
-    passage_of_time
-    if @asleep
-      @asleep = false
-      puts '...but wakes when you stop'
-    end
-  end
-
-  private
-  def hungry?
-    @stuff_in_belly <= 2
-  end
-
-  def poopy?
-    @stuff_in_intestine >= 8
-  end
-
-  def passage_of_time #  Move food from belly to intestine.
-    if @stuff_in_belly > 0
-      @stuff_in_belly = @stuff_in_belly - 1
-      @stuff_in_intestine = @stuff_in_intestine + 1
-    else # Our drangon is starving!
-      if @asleep
-        @asleep = false
-        puts 'He wakes up suddenly!'
-      end
-      puts "#{@name} is starving! In desperation, he ate YOU!"
-      exit # This quits the program
-    end
-
-    if @stuff_in_intestine >= 10
-      @stuff_in_intestine = 0
-      puts "Whoops! #{@name} had an accident..."
-    end
-
-    if hungry?
-      if @asleep
-        @asleep = false
-        puts 'He wakes up suddenly!'
-      end
-      puts "#{@name}'s stomach grumbles..."
-    end
-
-    if poopy?
-      if @asleep
-        @asleep = false
-        puts 'He wakes up suddenly!'
-      end
-      puts "#{@name} does the potty dance..."
+      # Toggle from even to odd, or odd to even
+      is_even = !is_even
     end
   end
 end
 
-pet = Dragon.new 'Norbert'
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+fruits = ['apple', 'bad apple', 'cherry', 'durian']
+fruits.each_even do |fruit|
+  puts "Yum! I just love #{fruit} pies, don't you?"
+end
+
+# Remember we are getting the even numbered *elements*
+# of the array, which in this case are all odd numbers,
+# because I live only to irratate you.
+
+[1, 2, 3, 4, 5].each_even do |odd_ball|
+  puts "#{odd_ball} is NOT an even number!"
+end
